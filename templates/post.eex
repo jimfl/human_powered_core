@@ -1,0 +1,26 @@
+<article class="post">
+<header>
+	<div class="title">
+		<h2><%= entry.title %></h2>
+		<p><%= entry.subtitle %></p>
+	</div>
+	<div class="meta">
+		<time class="published" datetime="<%= entry.date |> Date.to_iso8601 %>">
+			<%= entry.date |> format_date() %>
+		</time>
+	</div>
+</header>
+<img class="image featured" src="images/<%= entry.image %>" alt="">
+
+<%= entry |> to_html() %>
+
+<footer>
+	<ul class="actions">
+	</ul>
+	<ul class="stats">
+		<%= for tag <- entry.tags do %>
+		<li><a href="tags/<%= tag %>.html"><%= tag %></a></li>
+		<% end %>
+	</ul>
+</footer>
+</article>

@@ -1,0 +1,17 @@
+<rss version="2.0">
+  <channel>
+    <title><%= site.site_name %></title>
+    <link><%= site.root_url %></link>
+    <description><%= site.site_tagline %></description>
+  </channel>
+  <%= for entry <- entries |> Enum.take(10) do %>
+  <item>
+    <title><%= entry.title %></title>
+    <description><%= entry |> to_summary_html() %></description>
+    <link><%= site.root_url %>/<%= entry.path %>.html</link>
+    <guid><%= site.root_url %>/<%= entry.path %>.html</guid>
+    <pubDate><%= entry.date |> rfc822_date_time() %></pubDate>
+
+  </item>
+  <% end %>
+</rss>

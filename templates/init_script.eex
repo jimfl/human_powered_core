@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p <%= site.output_path %>
+mkdir -p <%= site.output_path %>/tags
+mkdir -p <%= site |> HumanPowered.Site.resolve_output_media_path %>
+(cd priv; tar cf - assets) | (cd <%= site.output_path %>; tar xf -)

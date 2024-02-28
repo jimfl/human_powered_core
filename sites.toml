@@ -1,0 +1,9 @@
+[site.hpc]
+site_name = "Human-Powered Craft"
+site_tagline = "There is no engine"
+source_path = "~/Obsidian/blog"
+output_path = "/my/output/path/"
+source_media_paths = ["media", "artifacts"]
+output_media_path = "images"
+root_url = "/"
+

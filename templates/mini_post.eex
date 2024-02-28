@@ -1,0 +1,10 @@
+<!-- Mini Post -->
+<article class="mini-post">
+	<header>
+		<h3><a href="<%= entry.path <> ".html" %>"><%= entry.title %></a></h3>
+		<time class="published" datetime="<%= entry.date |> Date.to_iso8601 %>">
+		<%= entry.date |> format_date() %>
+		</time>
+	</header>
+<a href="<%= entry.path <> ".html" %>" class="image"><img src="images/<%= entry.image %>" alt=""></a>
+</article>
